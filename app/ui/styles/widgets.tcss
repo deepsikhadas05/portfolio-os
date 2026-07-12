@@ -1,0 +1,135 @@
+/* =========================
+   PANEL TITLES
+========================= */
+
+.panel-title {
+    text-style: bold;
+    text-align: left;
+    color: white;
+    margin-bottom: 1;
+}
+
+/* =========================
+   PANEL CONTENT
+========================= */
+
+.panel-content {
+    content-align: left top;
+    text-align: left;
+    height: 1fr;
+    color: white;
+}
+
+/* =========================
+   CUSTOM HEADER
+========================= */
+
+DeepHeader {
+    height: 2;
+    layout: horizontal;
+    background: #181818;
+    color: white;
+    padding: 0 2;
+}
+
+#header-logo {
+    width: 18;
+    color: violet;
+    text-style: bold;
+}
+
+#header-status {
+
+    width: 1fr;
+
+    color: white;
+
+    content-align: center middle;
+}
+
+#header-online {
+
+    width: 12;
+
+    color: green;
+
+    text-style: bold;
+
+    text-align: right;
+}
+
+/* =========================
+   CUSTOM FOOTER
+========================= */
+
+#deep-footer {
+    dock: bottom;
+    height: 1;
+    background: #101010;
+    color: rgb(140,140,140);
+    text-style: bold;
+    padding: 0 2;
+}
+
+#boot-text {
+
+    width: 100%;
+
+    text-align: center;
+
+    color: cyan;
+
+    content-align: center middle;
+
+    text-style: bold;
+}
+
+#boot-log {
+    width: 100%;
+    height: 100%;
+
+    padding: 2 4;
+
+    background: black;
+    color: white;
+}
+
+#navigation {
+
+    margin-top: 2;
+
+    text-align: left;
+
+    text-style: bold;
+}
+
+#screen-title {
+
+    width: 100%;
+
+    height: 1fr;
+
+    content-align: center middle;
+
+    text-style: bold;
+
+    color: cyan;
+}
+
+#speed-banner {
+
+    color: #b388ff;
+
+    text-align: left;
+
+    margin-top: 1;
+
+    margin-bottom: 1;
+}
+
+#tagline {
+
+    color: #9fa7b8;
+
+    text-align: center;
+}
