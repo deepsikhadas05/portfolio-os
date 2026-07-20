@@ -6,6 +6,7 @@ from app.ui.screens.projects import ProjectsScreen
 from app.ui.screens.experience import ExperienceScreen
 from app.ui.screens.connect import ConnectScreen
 from app.ui.screens.deepDev import DeepDevScreen
+import webbrowser
 
 class DeepShell(App):
     """DeepShell"""
@@ -23,6 +24,7 @@ class DeepShell(App):
         ("right", "nav_right", ""),
         ("enter", "nav_select", ""),
         ("q", "quit", "Quit"),
+        ("r", "resume", "Resume"),
     ]
 
     def on_mount(self):
@@ -48,6 +50,11 @@ class DeepShell(App):
         nav = self.screen.query_one(Navigation)
         self.push_screen(nav.current.screen)
         print(f"Opening {nav.current}")
+    
+    def action_resume(self):
+        webbrowser.open(
+            "https://raw.githubusercontent.com/deepsikhadas05/portfolio-os/app/assets/resume_deepsikha_AI.pdf"
+        )
 
 if __name__ == "__main__":
     DeepShell().run()

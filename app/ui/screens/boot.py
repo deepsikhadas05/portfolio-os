@@ -1,6 +1,8 @@
+from rich.align import Align
 from textual.app import ComposeResult
 from textual.screen import Screen
 from textual.widgets import RichLog
+from textual.containers import Center
 
 
 class BootScreen(Screen):
@@ -8,24 +10,28 @@ class BootScreen(Screen):
 
     BOOT_LINES = [
         "",
-        "[bold cyan]DeepShell OS v0.1[/bold cyan]",
+        "[bold #F472B6]DeepShell OS v1.0[/bold #F472B6]",
         "",
-        "Initializing secure session...\n",
-        "[green]✓[/green] Loading Profile",
-        "[green]✓[/green] Loading AI Assistant",
-        "[green]✓[/green] Loading Knowledge Base",
-        "[bold green]✓ System Ready[/bold green]",
+        "[#B9B2C9]Initializing secure session...[/#B9B2C9]",
         "",
-        "[cyan]Launching DeepShell...[/cyan]",
+        "[#6EE7B7]✓[/#6EE7B7] [#F8F7FC]Loading Profile[/#F8F7FC]",
+        "[#6EE7B7]✓[/#6EE7B7] [#F8F7FC]Loading AI Assistant[/#F8F7FC]",
+        "[#6EE7B7]✓[/#6EE7B7] [#F8F7FC]Loading Knowledge Base[/#F8F7FC]",
+        "",
+        "[bold #C084FC]✦ DeepDev Online[/bold #C084FC]",
+        "[bold #6EE7B7]✓ System Ready[/bold #6EE7B7]",
+        "",
+        "[bold #F472B6]Launching DeepShell...[/bold #F472B6]",
     ]
 
     def compose(self) -> ComposeResult:
-        yield RichLog(
-            id="boot-log",
-            highlight=False,
-            markup=True,
-            wrap=False,
-        )
+        with Center():
+            yield RichLog(
+                id="boot-log",
+                highlight=False,
+                markup=True,
+                wrap=False,
+            )
 
     def on_mount(self) -> None:
         self.index = 0
@@ -36,7 +42,9 @@ class BootScreen(Screen):
 
     def boot_step(self) -> None:
         if self.index < len(self.BOOT_LINES):
-            self.boot_log.write(self.BOOT_LINES[self.index])
+            self.boot_log.write(
+                Align.center(self.BOOT_LINES[self.index])
+            )
             self.index += 1
         else:
             self.boot_timer.stop()

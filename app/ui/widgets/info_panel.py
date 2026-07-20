@@ -22,7 +22,7 @@ Infrastructure Automation,
 and Agentic Applications.
 
 Currently exploring
-LLM Engineering.
+the depths of Agentic AI and LLMs.
             """,
             classes="panel-content",
         )

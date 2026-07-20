@@ -13,7 +13,7 @@ class BaseScreen(Screen):
         ("escape", "back", "Back"),
     ]
 
-    PAGE_TITLE = "Available for Work"
+    PAGE_TITLE = "[#FAFAFA]Available for Work[/#FAFAFA]"
     def compose(self) -> ComposeResult:
         yield StarField()
         yield DeepHeader(self.PAGE_TITLE)

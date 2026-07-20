@@ -23,7 +23,7 @@ class Navigation(Static):
         self.animation_running = False
 
     def compose(self) -> ComposeResult:
-        yield Static(self.render_menu(), id="navigation")
+        yield Static(self.render_menu(), id="navigation", markup=True)
 
     def render_menu(self) -> str:
         menu = []
@@ -39,7 +39,7 @@ class Navigation(Static):
                 star = stars[self.animation_frame]
 
                 menu.append(
-                    f"[bold cyan]{star} {title.upper()}[/bold cyan]"
+                    f"[#7DF9FF]{star} {title.upper()}[/#7DF9FF]"
                 )
 
             else:
