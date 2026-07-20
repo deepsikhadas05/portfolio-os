@@ -1,83 +1,89 @@
-/* =========================
-   PANEL TITLES
-========================= */
+/* ==========================================================
+   PANELS
+========================================================== */
 
 .panel-title {
     text-style: bold;
     text-align: left;
-    color: white;
+    color: $primary;
     margin-bottom: 1;
 }
-
-/* =========================
-   PANEL CONTENT
-========================= */
 
 .panel-content {
     content-align: left top;
     text-align: left;
     height: 1fr;
-    color: white;
+    color: $text;
 }
 
-/* =========================
-   CUSTOM HEADER
-========================= */
+/* ==========================================================
+   HEADER
+========================================================== */
 
 DeepHeader {
     height: 2;
     layout: horizontal;
-    background: #181818;
-    color: white;
+
+    background: $surface;
+    color: $text;
+
     padding: 0 2;
+
+    border-bottom: solid $border;
 }
 
 #header-logo {
     width: 18;
-    color: violet;
+
+    color: $primary;
+
     text-style: bold;
 }
 
 #header-status {
-
     width: 1fr;
 
-    color: white;
+    color: $text-muted;
 
     content-align: center middle;
 }
 
 #header-online {
-
     width: 12;
 
-    color: green;
+    color: $success;
 
     text-style: bold;
 
     text-align: right;
 }
 
-/* =========================
-   CUSTOM FOOTER
-========================= */
+/* ==========================================================
+   FOOTER
+========================================================== */
 
 #deep-footer {
     dock: bottom;
     height: 1;
-    background: #101010;
-    color: rgb(140,140,140);
+
+    background: #16111D;
+    color: #B9B2C9;
+
     text-style: bold;
+
     padding: 0 2;
 }
 
-#boot-text {
+/* ==========================================================
+   BOOT SCREEN
+========================================================== */
 
+#boot-text {
     width: 100%;
 
     text-align: center;
 
-    color: cyan;
+    color: $secondary;
 
     content-align: center middle;
 
@@ -90,21 +96,29 @@ DeepHeader {
 
     padding: 2 4;
 
-    background: black;
-    color: white;
+    background: $surface;
+    color: $text;
 }
 
-#navigation {
+/* ==========================================================
+   NAVIGATION
+========================================================== */
 
+#navigation {
     margin-top: 2;
 
     text-align: left;
 
     text-style: bold;
+
+    color: $primary;
 }
 
-#screen-title {
+/* ==========================================================
+   SCREEN TITLE
+========================================================== */
 
+#screen-title {
     width: 100%;
 
     height: 1fr;
@@ -113,12 +127,15 @@ DeepHeader {
 
     text-style: bold;
 
-    color: cyan;
+    color: $primary;
 }
 
-#speed-banner {
+/* ==========================================================
+   HOME SCREEN
+========================================================== */
 
-    color: #b388ff;
+#speed-banner {
+    color: $secondary;
 
     text-align: left;
 
@@ -128,8 +145,7 @@ DeepHeader {
 }
 
 #tagline {
-
-    color: #9fa7b8;
+    color: $text-muted;
 
     text-align: center;
 }

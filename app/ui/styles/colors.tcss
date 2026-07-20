@@ -1,0 +1,27 @@
+/* ==========================================================
+   DeepShell — Midnight Sakura Theme
+========================================================== */
+
+$bg: #0B0910;
+
+$surface: #16111D;
+
+$surface-alt: #21182C;
+
+$text: #F8F7FC;
+
+$text-muted: #B9B2C9;
+
+$primary: #F472B6;
+
+$secondary: #C084FC;
+
+$accent: #A78BFA;
+
+$success: #6EE7B7;
+
+$warning: #FBBF24;
+
+$error: #FB7185;
+
+$border: #352846;
