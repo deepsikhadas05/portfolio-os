@@ -23,6 +23,8 @@ and Agentic Applications.
 
 Currently exploring
 the depths of Agentic AI and LLMs.
+
+Want to know more about me ? Use my digital twin DeepDev to chat ↓
             """,
             classes="panel-content",
         )
