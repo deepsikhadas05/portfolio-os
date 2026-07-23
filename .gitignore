@@ -2,3 +2,19 @@
 .env
 __pycache__/
 *.py[cod]
+
+# Web frontend
+/web/node_modules/
+/web/.next/
+/web/out/
+/web/build/
+/web/.vercel/
+/web/.turbo/
+/web/.env*
+/web/npm-debug.log*
+/web/yarn-debug.log*
+/web/yarn-error.log*
+/web/.pnpm-debug.log*
+/web/.DS_Store
+/web/*.tsbuildinfo
+/web/next-env.d.ts

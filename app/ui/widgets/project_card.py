@@ -4,7 +4,7 @@ import webbrowser
 from textual import events
 
 
-class ProjectCard(Static):
+class ProjectCard(Vertical):
 
     can_focus = True
 
@@ -19,7 +19,6 @@ class ProjectCard(Static):
         super().__init__()
 
         self.github = github
-
         self.title = title
         self.subtitle = subtitle
         self.description = description

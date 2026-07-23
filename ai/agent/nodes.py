@@ -1,16 +1,15 @@
 
-from ai.agent.state import AgentState
 from langchain_core.messages import (
     AIMessage,
     HumanMessage,
     SystemMessage,
 )
 
-
+from ai.agent.state import AgentState
 from ai.prompts.system import SYSTEM_PROMPT
 from ai.agent.llm import llm
 from ai.rag.context import build_context
-from ai.agent.chat import build_chat_messages
+
 
 def validate_question(state: AgentState):
 
@@ -39,15 +38,27 @@ def generate_answer(state: AgentState):
 
     question = state["messages"][-1].content
 
-    messages, sources = build_chat_messages(question)
+    retrieval = build_context(question)
 
-    response = llm.invoke(messages)
+    response = llm.invoke(
+        [
+            SystemMessage(content=SYSTEM_PROMPT),
+            *state["messages"],
+            HumanMessage(
+                content=f"""
+Context:
+
+{retrieval["context"]}
+"""
+            ),
+        ]
+    )
 
     return {
         "messages": [
             AIMessage(content=response.content)
         ],
         "metadata": {
-            "sources": sources
+            "sources": retrieval["sources"]
         }
     }
