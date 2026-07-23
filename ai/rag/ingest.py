@@ -5,7 +5,7 @@ import frontmatter
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from rag.vectorstore import vectorstore
+from rag.vectorstore import get_vectorstore
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
@@ -60,7 +60,7 @@ def ingest():
 
     chunks = splitter.split_documents(documents)
 
-    vectorstore.add_documents(chunks)
+    get_vectorstore().add_documents(chunks)
 
     print(f"Loaded {len(documents)} markdown files.")
 

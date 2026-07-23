@@ -15,7 +15,7 @@ def get_vectorstore():
 
     if _vectorstore is None:
         _embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
+            model_name="BAAI/bge-small-en-v1.5"
         )
 
         _vectorstore = Chroma(
