@@ -5,10 +5,10 @@ from langchain_core.messages import (
     SystemMessage,
 )
 
-from ai.agent.state import AgentState
-from ai.prompts.system import SYSTEM_PROMPT
-from ai.agent.llm import llm
-from ai.rag.context import build_context
+from agent.state import AgentState
+from prompts.system import SYSTEM_PROMPT
+from agent.llm import llm
+from rag.context import build_context
 
 
 def validate_question(state: AgentState):

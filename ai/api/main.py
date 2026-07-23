@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from langchain_core.messages import HumanMessage
-from ai.agent.graph import graph
+from agent.graph import graph
 
 app = FastAPI(title="DeepDev API")
 app.add_middleware(

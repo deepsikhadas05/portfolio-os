@@ -5,7 +5,7 @@ import frontmatter
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from ai.rag.vectorstore import vectorstore
+from rag.vectorstore import vectorstore
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
@@ -50,18 +50,21 @@ def load_markdown_documents() -> list[Document]:
 
     return documents
 
+def ingest():
+    documents = load_markdown_documents()
 
-documents = load_markdown_documents()
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=800,
+        chunk_overlap=150,
+    )
 
-splitter = RecursiveCharacterTextSplitter(
-    chunk_size=800,
-    chunk_overlap=150,
-)
+    chunks = splitter.split_documents(documents)
 
-chunks = splitter.split_documents(documents)
+    vectorstore.add_documents(chunks)
 
-vectorstore.add_documents(chunks)
+    print(f"Loaded {len(documents)} markdown files.")
 
-print(f"Loaded {len(documents)} markdown files.")
+    print(f"Created {len(chunks)} chunks.")
 
-print(f"Created {len(chunks)} chunks.")
+if __name__ == "__main__":
+    ingest()

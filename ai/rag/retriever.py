@@ -1,4 +1,4 @@
-from ai.rag.vectorstore import vectorstore
+from rag.vectorstore import vectorstore
 
 retriever = vectorstore.as_retriever(
     search_type="mmr",

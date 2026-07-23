@@ -1,7 +1,7 @@
 from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import MemorySaver
-from ai.agent.state import AgentState
-from ai.agent.nodes import (
+from agent.state import AgentState
+from agent.nodes import (
     validate_question,
     generate_answer,
 )

@@ -1,4 +1,4 @@
-from ai.rag.retriever import retrieve
+from rag.retriever import retrieve
 
 query = input("Question: ")
 

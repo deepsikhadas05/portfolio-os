@@ -3,8 +3,8 @@ from langchain_core.messages import (
     HumanMessage,
 )
 
-from ai.prompts.system import SYSTEM_PROMPT
-from ai.rag.context import build_context
+from prompts.system import SYSTEM_PROMPT
+from rag.context import build_context
 
 
 def build_chat_messages(question: str):
