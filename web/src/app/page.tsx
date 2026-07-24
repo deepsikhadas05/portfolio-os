@@ -59,7 +59,7 @@ export default function Home() {
         dotColor="#ffffff"
         lineColor="#8b5cf6"
         trailColor="#a855f7"
-        spacing={28}
+        spacing={22}
         radius={350}
         strength={5}
         trail
@@ -87,7 +87,7 @@ export default function Home() {
       />
       </div>
       {/* Top Left Text */}
-      <div className="absolute top-10 left-10 z-10">
+      <div className="absolute top-0 left-0 z-8">
         <Typewriter
           texts={[
             "Deepsikha",
@@ -99,7 +99,7 @@ export default function Home() {
           ]}
           style={{
             position: "absolute",
-            top: "220px",
+            top: "200px",
             left: "100px",
           }}
           prefix=">"
@@ -110,9 +110,9 @@ export default function Home() {
         <div
         style={{
           position: "absolute",   // Change to "relative" if needed
-          top: "340px",           // Vertical position
-          left: "100px",          // Horizontal position
-          width: "650px",         // Box width
+          top: "280px",           // Vertical position
+          left: "90px",          // Horizontal position
+          width: "600px",         // Box width
           padding: "24px",        // Inner spacing
           borderRadius: "16px",   // Rounded corners
           background: "transparent"
@@ -121,7 +121,7 @@ export default function Home() {
         <p
           style={{
             fontFamily: "Prompt",      // Font
-            fontSize: "20px",         // Font size
+            fontSize: "16px",         // Font size
             fontWeight: 350,          // 300-700
             lineHeight: "1.6",
             color: "#d1d5db",
@@ -139,7 +139,7 @@ export default function Home() {
           <span className="text-white font-semibold">Talk to my AI-twin to learn more about me ↴</span>
           
         </p>
-        <div className="mt-6 ml-100">
+        <div className="mt-6 ml-78">
           <BookDemoButton
               variant = "violet"
               onClick={() => setOpenDeepDev(true)}

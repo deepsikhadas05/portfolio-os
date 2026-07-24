@@ -493,7 +493,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                         rel="noopener noreferrer"
                         className="sm-socials-link transition-all duration-300 hover:text-[#760FFF] hover:scale-110"
                       >
-                        <Icon size={48} />
+                        <Icon size={42} />
                       </a>
                     </li>
                   );

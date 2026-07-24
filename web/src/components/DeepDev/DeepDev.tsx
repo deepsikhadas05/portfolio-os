@@ -58,11 +58,11 @@ export default function DeepDev({ onClose }: DeepDevProps) {
 
                     <div className="animate-in fade-in duration-500">
 
-                      <h2 className="text-5xl font-bold text-white">
+                      <h2 className="text-3xl font-bold text-white">
                         Heyy !
                       </h2>
 
-                      <p className="mt-6 text-xl leading-9 text-white/70">
+                      <p className="mt-6 text-l leading-9 text-white/70">
                         I'm{" "}
                         <span className="font-semibold text-[#760FFF]">
                           DeepDev
@@ -70,14 +70,14 @@ export default function DeepDev({ onClose }: DeepDevProps) {
                         , Deepsikha's AI Twin.
                       </p>
 
-                      <p className="mt-4 max-w-3xl text-lg leading-8 text-white/50">
+                      <p className="mt-4 max-w-3xl text-s leading-8 text-white/50">
                         I can answer questions about her projects,
                         internship, infrastructure engineering
                         experience, AI work, certifications and
                         technical skills.
                       </p>
 
-                      <p className="mt-4 max-w-3xl text-lg leading-8 text-white/50">
+                      <p className="mt-4 max-w-3xl text-s leading-8 text-white/50">
                         Type CHAT to talk to DeepDev ~
                       </p>
 

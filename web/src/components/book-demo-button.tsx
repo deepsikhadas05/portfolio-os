@@ -75,7 +75,7 @@ const BookDemoButton = React.forwardRef<HTMLButtonElement, BookDemoButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "group/btn bd-root relative inline-flex h-16 w-52 rounded-[12px] overflow-hidden transition-transform active:scale-[0.97]",
+          "group/btn bd-root relative inline-flex h-14 w-52 rounded-[12px] overflow-hidden transition-transform active:scale-[0.97]",
           className,
         )}
         style={{

@@ -318,7 +318,7 @@ const COMPONENT_DEFAULTS = {
     font: {
         fontFamily: "Lexend",
         variant: "Regular",
-        fontSize: 150,
+        fontSize: 110,
         lineHeight: "1.4em",
         letterSpacing: "-0.025em",
     } as any,
