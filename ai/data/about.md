@@ -22,7 +22,7 @@ tags:
 
 # About
 
-Deepsikha Das is a Computer Science graduate with a strong interest in Artificial Intelligence, Automation, Infrastructure Engineering, and Software Development.
+Deepsikha Das is a Computer Science Engineering Undergraduate (B.Tech) with a strong interest in Artificial Intelligence, Automation, Infrastructure Engineering, and Software Development.
 
 She enjoys building practical systems that combine software engineering with AI to solve real-world problems. Her work focuses on creating tools that are useful, maintainable, and designed with production-quality architecture in mind rather than simple prototypes.
 
