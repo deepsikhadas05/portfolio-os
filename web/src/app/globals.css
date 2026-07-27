@@ -53,7 +53,51 @@
 
 body {
   font-family: 'Lexend', Arial, Helvetica, sans-serif;
+  background: #000;
 }
+
+html { scroll-behavior: smooth; }
+
+.portfolio-section {
+  position: relative;
+  max-width: 1400px;
+  min-height: 80vh;
+  margin: 0 auto;
+  padding: 8rem 7%;
+  scroll-margin-top: 2rem;
+}
+
+.section-kicker { color: #a855f7; font-size: .76rem; font-weight: 700; letter-spacing: .2rem; margin-bottom: 1.2rem; }
+.section-title { color: #fff; font-size: clamp(2.5rem, 5vw, 4.7rem); line-height: 1.03; letter-spacing: -.06em; margin: 0; }
+.experience-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: 4rem; align-items: start; }
+.timeline-note { max-width: 260px; color: #a99bb7; font: 400 .95rem/1.65 Prompt, sans-serif; margin: 1.5rem 0 0; }
+.timeline-wrap { position: relative; padding-left: 4.1rem; padding-bottom: 3.5rem; }
+.timeline-line { position: absolute; top: .4rem; bottom: .55rem; left: 1.08rem; width: 2px; overflow: hidden; background: rgba(216, 180, 254, .18); border-radius: 99px; transform: rotate(1.2deg); transform-origin: top; }
+.timeline-line::after { content: ""; position: absolute; left: -2px; top: 30%; height: 1px; width: 6px; background: rgba(216, 180, 254, .26); box-shadow: 1px 84px 0 rgba(216, 180, 254, .18), -1px 169px 0 rgba(216, 180, 254, .2); }
+.timeline-line span { display: block; width: 100%; height: 0; background: linear-gradient(#e9d5ff, #8b5cf6); box-shadow: 0 0 16px rgba(168, 85, 247, .85); transition: height 1.15s cubic-bezier(.22, 1, .36, 1); }
+.timeline-date { position: absolute; left: -6.9rem; width: 5.8rem; margin: 0; color: #c4b5d4; font: 500 .7rem/1 Prompt, sans-serif; letter-spacing: .04em; text-align: right; opacity: 0; transform: translateX(9px); transition: opacity .45s ease .75s, transform .45s ease .75s; }.timeline-date::after { content: ""; display: inline-block; width: 1.3rem; height: 1px; margin-left: .55rem; vertical-align: middle; background: #a855f7; }.timeline-date-end { top: .4rem; }.timeline-date-start { bottom: .55rem; }
+.timeline-main { position: relative; opacity: 0; transform: translateY(22px) rotate(.4deg); transition: opacity .65s ease .35s, transform .75s cubic-bezier(.22, 1, .36, 1) .35s; }
+.timeline-node { position: absolute; top: 1.55rem; left: -4.2rem; display: grid; place-items: center; width: 2.35rem; height: 2.35rem; color: #f3e8ff; background: #2e1065; border: 1px solid #c084fc; border-radius: 50%; box-shadow: 0 0 0 6px rgba(76, 29, 149, .25), 0 0 22px rgba(168, 85, 247, .35); transform: scale(.3) rotate(-50deg); transition: transform .55s cubic-bezier(.34, 1.56, .64, 1) .8s; }
+.timeline-node > span { position: absolute; width: .45rem; height: .45rem; background: #fff; border-radius: 50%; opacity: .75; }
+.timeline-node svg { position: relative; z-index: 1; }
+.timeline-coda { display: flex; align-items: center; gap: 1rem; margin: 2.2rem 0 0 -2.5rem; color: #b8afc3; opacity: 0; transform: translateX(-12px); transition: opacity .5s ease 1s, transform .55s ease 1s; }.timeline-coda p { font: 400 .84rem/1.45 Prompt, sans-serif; margin: 0; }.coda-dot { display: block; width: .62rem; height: .62rem; background: #a855f7; border: 2px solid #e9d5ff; border-radius: 50%; box-shadow: 0 0 14px #a855f7; }
+.timeline-visible .timeline-line span { height: 100%; }.timeline-visible .timeline-date { opacity: 1; transform: translateX(0); }.timeline-visible .timeline-main { opacity: 1; transform: translateY(0) rotate(.4deg); }.timeline-visible .timeline-node { transform: scale(1) rotate(0); }.timeline-visible .timeline-coda { opacity: 1; transform: translateX(0); }
+.timeline-card, .focus-card { background: rgba(11, 7, 18, .7); border: 1px solid rgba(216, 180, 254, .23); border-radius: 1.25rem; backdrop-filter: blur(12px); }
+.timeline-card { padding: 2rem; }
+.timeline-top { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
+.role { color: #c084fc; font: 500 .85rem Prompt, sans-serif; margin: 0 0 .45rem; }
+.timeline-card h3 { margin: 0; color: #fff; font-size: 1.5rem; letter-spacing: -.04em; }
+.timeline-top > span { color: #b8afc3; font: .8rem Prompt, sans-serif; text-align: right; }
+.timeline-card > p, .research-heading > p, .focus-card p { color: #c4bdcc; font: 400 .95rem/1.65 Prompt, sans-serif; }
+.timeline-points { display: flex; flex-wrap: wrap; gap: .8rem 1.5rem; padding-top: 1.5rem; margin-top: 1.5rem; border-top: 1px solid rgba(216, 180, 254, .16); color: #e9d5ff; font: .82rem Prompt, sans-serif; }
+.timeline-points span { display: flex; align-items: center; gap: .45rem; }
+.research-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 3rem; }
+.research-heading .section-title { max-width: 740px; }.research-heading > p { max-width: 310px; margin: 0; }
+.focus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }.focus-card { padding: 1.5rem; min-height: 250px; display: flex; flex-direction: column; transition: transform .3s ease, border-color .3s ease; }.focus-card:hover { transform: translateY(-6px); border-color: rgba(192, 132, 252, .7); }.focus-card > div { display: flex; align-items: center; justify-content: space-between; color: #c084fc; }.focus-card > div span { font: .75rem Prompt, sans-serif; }.focus-card h3 { color: #fff; font-size: 1.5rem; letter-spacing: -.04em; margin: auto 0 .6rem; }.focus-card p { margin: 0 0 1.2rem; }.focus-card > svg { color: #c084fc; align-self: end; }
+@media (max-width: 860px) { .portfolio-section { padding: 6rem 7%; }.experience-layout, .research-heading { display: block; }.timeline-wrap { margin-top: 2.5rem; }.timeline-card { margin-top: 0; }.research-heading > p { margin-top: 1.5rem; }.focus-grid { grid-template-columns: 1fr; }.focus-card { min-height: 220px; } }
+@media (max-width: 600px) { .portfolio-section { padding: 6rem 1.4rem; }.timeline-date { left: -2.7rem; width: auto; text-align: left; transform: none; }.timeline-date::after { width: .8rem; }.timeline-top { display: block; }.timeline-top > span { display: block; text-align: left; margin-top: .75rem; } }
+
+@media (prefers-reduced-motion: reduce) { .timeline-line span { height: 100%; transition: none; }.timeline-date, .timeline-main, .timeline-node, .timeline-coda { opacity: 1; transform: none; transition: none; } }
 
 :root {
   --background: oklch(1 0 0);

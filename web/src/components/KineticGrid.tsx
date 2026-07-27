@@ -190,10 +190,12 @@ export default function KineticGrid(props: KineticGridProps) {
             if (t) setMouse(t.clientX, t.clientY)
         }
 
-        host.addEventListener("mousemove", onMove)
-        host.addEventListener("mouseleave", onLeave)
-        host.addEventListener("touchmove", onTouch, { passive: true })
-        host.addEventListener("touchend", onLeave)
+        // Listen on window so the fixed background remains interactive even
+        // while content cards and buttons sit above it.
+        window.addEventListener("mousemove", onMove)
+        window.addEventListener("mouseleave", onLeave)
+        window.addEventListener("touchmove", onTouch, { passive: true })
+        window.addEventListener("touchend", onLeave)
 
         let raf = 0
         const frame = () => {
@@ -301,10 +303,10 @@ export default function KineticGrid(props: KineticGridProps) {
         return () => {
             cancelAnimationFrame(raf)
             ro?.disconnect()
-            host.removeEventListener("mousemove", onMove)
-            host.removeEventListener("mouseleave", onLeave)
-            host.removeEventListener("touchmove", onTouch)
-            host.removeEventListener("touchend", onLeave)
+            window.removeEventListener("mousemove", onMove)
+            window.removeEventListener("mouseleave", onLeave)
+            window.removeEventListener("touchmove", onTouch)
+            window.removeEventListener("touchend", onLeave)
         }
     }, [
         background,

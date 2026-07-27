@@ -1,11 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
 import KineticGrid from "@/components/KineticGrid";
 import Typewriter from "@/components/Typewriter";
 import StaggeredMenu from "@/components/StaggeredMenu";
 import BookDemoButton from "@/components/book-demo-button"; 
 import DeepDev from "@/components/DeepDev/DeepDev";
+import Projects from "@/components/Projects/Projects";
+import CareerSections from "@/components/CareerSections";
 
 
 const menuItems = [
@@ -51,10 +52,9 @@ export default function Home() {
   const [openDeepDev, setOpenDeepDev] = useState(false);
   
   return (
-    <main className="relative h-screen w-screen overflow-hidden bg-black">
-
-      {/* Background */}
-      <KineticGrid
+    <main className="relative min-h-screen w-full overflow-x-hidden bg-black">
+      <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
+        <KineticGrid
         background="#000000"
         dotColor="#ffffff"
         lineColor="#8b5cf6"
@@ -63,14 +63,17 @@ export default function Home() {
         radius={350}
         strength={5}
         trail
-      />
+        />
+      </div>
+      <div className="relative z-10">
+      <section id="about" className="relative min-h-screen w-full">
       <div
         className={`transition-opacity duration-300 ${
           openDeepDev ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       >
       
-
+      
       {/* Menu */}
       <StaggeredMenu
         isFixed
@@ -155,7 +158,14 @@ export default function Home() {
         onClose={() => setOpenDeepDev(false)}
       />
       )}
+      </section>
+      <Projects />
+      <CareerSections />
+      <footer className="relative px-[7%] py-10 text-sm text-violet-200/70"><span>© {new Date().getFullYear()} Deepsikha Das</span><span className="float-right">Built with curiosity.</span></footer>
+      </div>
     </main>
+  
+  
     
     
   );
