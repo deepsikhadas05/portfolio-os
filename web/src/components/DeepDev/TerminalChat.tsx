@@ -8,14 +8,14 @@ type Message = {
   content: string;
 };
 
-interface TerminalChatProps {
-  onFirstMessage?: () => void;
-}
+const INTRO_MESSAGE: Message = {
+  role: "assistant",
+  content:
+    "Hey! I'm **DeepDev**, Deepsikha's AI twin. Ask me about her projects, internship experience, AI work, certifications, or technical skills.",
+};
 
-export default function TerminalChat({
-  onFirstMessage,
-}: TerminalChatProps) {
-  const [messages, setMessages] = useState<Message[]>([]);
+export default function TerminalChat() {
+  const [messages, setMessages] = useState<Message[]>([INTRO_MESSAGE]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [threadId] = useState(() =>
@@ -32,10 +32,6 @@ export default function TerminalChat({
 
   async function sendMessage() {
     if (!input.trim() || loading) return;
-
-    if (messages.length === 0) {
-      onFirstMessage?.();
-    }
 
     const question = input.trim();
 
@@ -198,29 +194,44 @@ export default function TerminalChat({
 
       {/* Terminal Input */}
 
-      <div className="border-t border-white/10 bg-[#0d0d0d] p-6">
+      <form
+        className="border-t border-white/10 bg-[#0d0d0d] p-6"
+        onSubmit={(event) => {
+          event.preventDefault();
+          sendMessage();
+        }}
+      >
 
         <div className="flex items-center gap-4 font-mono">
 
-          <span className="text-xl font-bold text-[#760FFF]">
+          <span className="text-xl font-bold text-[#760FFF]" aria-hidden="true">
             &gt;
+          </span>
+
+          <span className="-ml-3 animate-pulse text-xl text-[#a855f7]" aria-hidden="true">
+            ▍
           </span>
 
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                sendMessage();
-              }
-            }}
             placeholder="Ask DeepDev anything..."
-            className="flex-1 bg-transparent text-white outline-none placeholder:text-white/30"
+            autoFocus
+            disabled={loading}
+            className="flex-1 bg-transparent text-white outline-none placeholder:text-white/30 disabled:cursor-not-allowed"
           />
+
+          <button
+            type="submit"
+            disabled={!input.trim() || loading}
+            className="rounded-lg border border-[#760FFF]/70 px-4 py-2 text-sm font-semibold text-[#d8b4fe] transition hover:bg-[#760FFF] hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            {loading ? "Sending..." : "Send"}
+          </button>
 
         </div>
 
-      </div>
+      </form>
 
     </div>
   );

@@ -1,0 +1,46 @@
+        <div className="absolute bottom-20 right-40 z-20 w-[720px] h-[720px] pointer-events-auto">
+        <OptionWheel
+          items={[
+            'Ambient',
+            'House',
+            'Techno',
+            'Jazz',
+            'Lo-Fi',
+            'Synthwave',
+          ]}
+          defaultSelected={2}
+          textColor="#a6a6a6"
+          activeColor="#ffffff"
+          side="right"
+          fontSize={3}
+          spacing={1.4}
+          curve={2.5}
+          tilt={6}
+          blur={2}
+          fade={0.25}
+          smoothing={200}
+          inset={80}
+          loop={false}
+          draggable
+          soundUrl="/assets/sounds/click-soft.mp3"
+          soundVolume={0.5}
+          onChange={(index: number, item: string) => console.log(index, item)}
+        />
+      </div>
+        
+        
+        
+        <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          right: "-220px",       // Move it outside the screen
+          transform: "translateY(-50%)",
+          zIndex: 5,
+        }}
+      >
+        <Orb
+          size={450}
+          background="transparent"
+        />
+      </div> 
